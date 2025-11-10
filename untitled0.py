@@ -19,7 +19,14 @@ print(data.columns)
 print(data.nunique())
 #the nunique function prints out the unique numbers in each column.
 print(data.value_counts())
-#the value_count functio prints out how many times each unique values appears in each column. 
+#the value_count function prints out how many times each unique values appears in each column. 
+
+#b)handle duplicate entries
+print(data.duplicated())
+print(data.drop_duplicates())
+#As the duplicated() function is used, all our counts of the rows in the dataset are stated as false demonstrating that there are no duplicated rows.
+#When the drop_duplicates() function is also used, the number of rows and columns stay the same as the original dataset.
+
 
 
 
