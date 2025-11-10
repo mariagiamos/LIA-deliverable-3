@@ -36,6 +36,13 @@ print(data.fillna("None"))
 #If we dropped rown we would loose a lot of valuable data which can affect the response of our 3 questions that need to be answered at the end of the deliverable. 
 #Replacing it with none is a realistic and neutral option. 
       
+#d)Correct data types and formats
+#It is not necessary to corect data types and formats since they are already in the correct format. In each column, the type of data matches the columns format as they are either stated as intergers, floating numbers or Strings.
+#this statement can be proven by the function info()
+#Person ID, Age, Quality of Sleep,Physical Activity level, Stess level, Heart Rate and daily steps are all intergers
+#Sleep Duration are floating numbers
+#Occupation, Gender, BMI, Blood pressure and Sleep Disorders are all strings. 
+
 
 
       
