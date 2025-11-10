@@ -27,6 +27,25 @@ print(data.drop_duplicates())
 #As the duplicated() function is used, all our counts of the rows in the dataset are stated as false demonstrating that there are no duplicated rows.
 #When the drop_duplicates() function is also used, the number of rows and columns stay the same as the original dataset.
 
+#c)identify and manage missing values
+print(data.isnull())
+#there are only missing values in the Sleep Disorder column wherever true is stated.
+print(data.fillna("None"))
+#This fillna function in pandas was used to replace the missing values (NaN) in the dataset with a chose string "None". 
+#c) We decided to fill categorial missing values with the string "None" since we are assuming that the individulas left it blank because they do not suffer from sleeping disorders. Many individuals dont suffer from sleep disorders as they can be healthy, in shape and have good lifestyle habits. 
+#If we dropped rown we would loose a lot of valuable data which can affect the response of our 3 questions that need to be answered at the end of the deliverable. 
+#Replacing it with none is a realistic and neutral option. 
+      
+
+
+      
+
+
+
+
+
+
+
 
 
 
