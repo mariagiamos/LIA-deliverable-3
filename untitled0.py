@@ -43,9 +43,36 @@ print(data.fillna("None"))
 #Sleep Duration are floating numbers
 #Occupation, Gender, BMI, Blood pressure and Sleep Disorders are all strings. 
 
+#6.1 Visualizing statistical relationships
+import seaborn as sns
+sns.relplot(data, x="Sleep Duration", y="Stress Level", col="Gender", kind="scatter")
+#2 scatter plots of Stress Level vs. Sleep Duration was generated between Male and Female showing increased stress levels result to low sleep duration.
+sns.relplot(data, x="Quality of Sleep", y="Physical Activity Level", hue="Gender", size="Age", col="Sleep Disorder")
+#2 scatter plots of Physical Activity Level vs. Quality of Sleep were generated between 2 sleep disorders: Sleep Apnea and Insomnia. Most people that get lower quality of sleep dont do much physical activity.
+sns.relplot(data, x="Age", y="Physical Activity Level", kind="line")
+#A line plot between Physical Activity Level and Age was generated showing how the values vary througout age.
+sns.relplot(data, x="Sleep Duration", y="Quality of Sleep", kind="line", errorbar="sd")
+#A line plot between Quality of Sleep vs.Sleep Duration was generated showing how increased sleep duartion results to increased quality of sleep with a standard deviation. 
+sns.lmplot(data, x="Daily Steps", y="Heart Rate")
+#A scatter plot with a linear regression line was generated between Stress levels vs. Daily Steps. 
 
 
-      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
 
 
