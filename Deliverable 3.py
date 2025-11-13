@@ -2,8 +2,9 @@ print("deliverable 3")
 
 import pandas as pd
 data = pd.read_csv("Sleep_health_and_lifestyle_dataset.csv")
+import seaborn as sns
+#2. Preliminary steps-----------------------------------
 
-#2
 #a)initial data inspection
 #this step is to give a preview of our chosen dataset.
 print(data.head())
@@ -43,8 +44,88 @@ print(data.fillna("None"))
 #Sleep Duration are floating numbers
 #Occupation, Gender, BMI, Blood pressure and Sleep Disorders are all strings. 
 
+
+#4. Univariate graphical EDA-------------------------------------
+variables= ['Age', 'Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps' ]  #numerical variables 
+
+
+#a) Custom and appropriate number of bins
+for var in variables:   #create a simple for loop to generate plots for 7 variables mentionned above
+    sns.displot(data, x=var,bins=10)
+    
+
+#b) Conditioning on other variables
+for var in variables:
+    sns.displot(data,x=var, bins=10, hue='Gender', element= 'step') #added 'step' to make the genders easier to distinguish
+
+    
+#c) Stacked histogram
+for var in variables:
+    sns.displot(data,x=var, bins=10, hue='Occupation', multiple= 'stack')
+
+#d) Dodge bars
+for var in variables:
+    sns.displot(data,x=var, bins=10, hue='BMI Category', multiple='dodge')
+
+#e) Normalized histogram statistics
+for var in variables:
+    sns.displot(data, x=var, bins=10, stat='density', common_norm=False)
+
+#f) Kernel density estimation (choosing the smoothing bandwidth)
+for var in variables:
+    sns.displot(data, x=var, kind='kde', bw_adjust= .25 ) 
+
+#g) Empirical cumulative distributions
+for var in variables:
+    sns.displot(data, x=var, kind='ecdf')
+
+
+
+#Questions to answer for five of the numerical variables
+#4.1 What is the distribution of the variable? (is the data normally distributed, skewed, bimodal, etc?)
+#Age:
+#Sleep Duration:
+#Daily Steps:
+#Heart Rate:
+#Stress Levels:
+
+
+#4.2 Are there any outliers? (are there extreme values that fall outside the typical range?)
+#Age:
+#Sleep Duration:
+#Daily Steps:
+#Heart Rate:
+#Stress Levels:
+    
+#4.3 What is the spread and central tendency? (where is the median? How spread out is the data?)
+#Age:
+#Sleep Duration:
+#Daily Steps:
+#Heart Rate:
+#Stress Levels:
+    
+#4.4 Is the data symmetric or skewed? (is the data skewed left or right?)
+#Age:
+#Sleep Duration:
+#Daily Steps:
+#Heart Rate:
+#Stress Levels:
+    
+#4.5 How frequent are certain ranges of values? (which value ranges are most common?)
+#Age:
+#Sleep Duration:
+#Daily Steps:
+#Heart Rate:
+#Stress Levels:
+
+
+
+
+
+
+
+
 #6.1 Visualizing statistical relationships
-import seaborn as sns
 sns.relplot(data, x="Sleep Duration", y="Stress Level", col="Gender", kind="scatter")
 #2 scatter plots of Stress Level vs. Sleep Duration was generated between Male and Female showing increased stress levels result to low sleep duration.
 sns.relplot(data, x="Quality of Sleep", y="Physical Activity Level", hue="Gender", size="Age", col="Sleep Disorder")
