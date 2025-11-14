@@ -68,6 +68,15 @@ for column in num.columns:
     print("Quartiles (Q1, Q2, Q3):")
     print(num[column].quantile([0.25, 0.50, 0.75]))
     
+#b) Categorical Variables
+print("Categorical Variables")
+for col in cat.columns:
+    print("Variable:", col)
+    print(cat[col].value_counts()) #frequency counts of each category
+    print(cat[col].value_counts(normalize=True)) #proportions instead of counts
+    print("Mode:", cat[col].mode()[0]) #most common category
+    print("Unique:", cat[col].nunique()) #how many different categories
+
 
 #4. Univariate graphical EDA-------------------------------------------------------
 variables= ['Age', 'Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps' ]  #numerical variables 
