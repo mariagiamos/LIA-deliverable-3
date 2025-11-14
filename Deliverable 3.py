@@ -153,6 +153,12 @@ sns.boxplot(y=data['Heart Rate'])
 #Stress Levels: 3 and 8 ( slighty higger) which shows how stress is lived in both extremes; not at all and a lot, with little in the middle around 6. 
 
 #5 Multivariate non-graphical EDA
+#a) Relationship between Gender and Sleep Disorder in proportions
+print("Crosstab between Gender and Sleep Disorder")
+#This table shows how many individuals of each gender have or do not have sleep disorders.
+tab1 = pd.crosstab(data["Gender"], data["Sleep Disorder"], normalize='index')
+print(tab1)
+
 
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
