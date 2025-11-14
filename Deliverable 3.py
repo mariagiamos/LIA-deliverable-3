@@ -210,6 +210,9 @@ sns.catplot(data=data, x='Gender', y='Blood Pressure', kind='strip', jitter=Fals
 sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='swarm')
 #A beeswarm (swarm) plot showing Blood Pressure distributions across sleep disorder types by Gender.
 
+#d)box plot representing 3 variables
+sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='box')
+#Box plot showing the distribution of Blood Pressure for each sleep disorder category split by Gender.
 
 
 
