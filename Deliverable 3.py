@@ -152,6 +152,7 @@ sns.boxplot(y=data['Heart Rate'])
 #Heart Rate: Between 67 and 70 bpm.
 #Stress Levels: 3 and 8 ( slighty higger) which shows how stress is lived in both extremes; not at all and a lot, with little in the middle around 6. 
 
+#5 Multivariate non-graphical EDA
 
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
