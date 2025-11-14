@@ -45,7 +45,7 @@ print(data.fillna("None"))
 #Occupation, Gender, BMI, Blood pressure and Sleep Disorders are all strings. 
 
 
-#4. Univariate graphical EDA-------------------------------------
+#4. Univariate graphical EDA-------------------------------------------------------
 variables= ['Age', 'Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps' ]  #numerical variables 
 
 
@@ -82,41 +82,42 @@ for var in variables:
 
 
 #Questions to answer for five of the numerical variables
-#4.1 What is the distribution of the variable? (is the data normally distributed, skewed, bimodal, etc?)
-#Age:
-#Sleep Duration:
-#Daily Steps:
-#Heart Rate:
-#Stress Levels:
 
+#4.1 What is the distribution of the variable? (is the data normally distributed, skewed, bimodal, etc?)
+#Age: It is multimodal due to its several dips in between the bins and irregular, but perhaps slightly skewed towards older ages. 
+#Sleep Duration: It is multimodal because poeple cluster around different sleep duration habits ( 6 ,7,8 hours usually are more commmun) which produces multiple bumps and dimps instead of a smooth curve. 
+#Daily Steps: It is also multimodal with no clear skewness.
+#Heart Rate: It looks somewhat normaly distributed in the beguining between 65 and 75 bpm, but it is longer on the right side making it none symetrical and right-skewed towards the 75 to 85 bpm.
+#Stress Levels: Because there are several bars at specific numbers (integers) thus has discrite levels of stress, making it neither normally distributed, not skewed or bimodial. But, we can see that the lowest level is 6 and highest is 8.
 
 #4.2 Are there any outliers? (are there extreme values that fall outside the typical range?)
-#Age:
-#Sleep Duration:
-#Daily Steps:
-#Heart Rate:
-#Stress Levels:
-    
+#Age: None
+#Sleep Duration: None
+#Daily Steps: None 
+#Heart Rate: I wasn't so sure about this one , so i plotted a box plot (below) and it clearly shows quite a few outliners extending from 77 to higher than 80 bpm. Also I might add that this is the heart rate at rest I suppose which would make sense for a resting heart rate higher than 80 to be taken as an outliner because it is not healty and often is linked to overweight and diseases. 
+sns.boxplot(y=data['Heart Rate'])
+#Stress Levels: None
+   
 #4.3 What is the spread and central tendency? (where is the median? How spread out is the data?)
-#Age:
-#Sleep Duration:
-#Daily Steps:
-#Heart Rate:
-#Stress Levels:
+#Age: Central Tendency around 45 years and is spread out between 25 and 60 years and is very unevenly spread out mosly in the earlier ages.
+#Sleep Duration: Central Tendency around 7 hours and the data is spread out unevenly with a few drastic drops in between data.
+#Daily Steps: Central Tendency around 7000 steps and the data is spread out unevenly.
+#Heart Rate: Central Tendency is a little over 70 bpm and the data spreads out into lower count towards the right end .
+#Stress Levels: Central Tendency is 5 and isn't very spread out. 
     
 #4.4 Is the data symmetric or skewed? (is the data skewed left or right?)
-#Age:
-#Sleep Duration:
-#Daily Steps:
-#Heart Rate:
-#Stress Levels:
+#Age: It is not really symmetric or skewed ( a little right-skewed but it can be neglected)
+#Sleep Duration: Not symmetric at all or skewed. 
+#Daily Steps: Not symmetric, with no clear skewness. 
+#Heart Rate: May seem symetric at first, but not at the end where it is clearly right-skewed.
+#Stress Levels: The histogram that is the least symetric and not skewed. 
     
 #4.5 How frequent are certain ranges of values? (which value ranges are most common?)
-#Age:
-#Sleep Duration:
-#Daily Steps:
-#Heart Rate:
-#Stress Levels:
+#Age: Around 45 years
+#Sleep Duration: Between 6.5 hours , 7.25-7.5 hours and around 8 hours which is the highest. 
+#Daily Steps: 8000 steps
+#Heart Rate: Between 67 and 70 bpm.
+#Stress Levels: 3 and 8 ( slighty higger) which shows how stress is lived in both extremes; not at all and a lot, with little in the middle around 6. 
 
 
 
@@ -124,7 +125,7 @@ for var in variables:
 
 
 
-
+#6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
 sns.relplot(data, x="Sleep Duration", y="Stress Level", col="Gender", kind="scatter")
 #2 scatter plots of Stress Level vs. Sleep Duration was generated between Male and Female showing increased stress levels result to low sleep duration.
@@ -137,7 +138,23 @@ sns.relplot(data, x="Sleep Duration", y="Quality of Sleep", kind="line", errorba
 sns.lmplot(data, x="Daily Steps", y="Heart Rate")
 #A scatter plot with a linear regression line was generated between Stress levels vs. Daily Steps. 
 
+#6.2.Visualizing categorical data 
 
+
+
+#h) 1 bar plot representing 3 variables showing 97% confidence intervals
+
+#i) 1 point plot representing 3 variables showing 90% confidence intervals and lines in dashed style
+
+#j) 1 bar plot showing the number of observations in each category
+
+
+#6.3. Visualizing bivariate distributions
+#a) 1 “heatmap” plot representing 2 variables with color intensity bar and adjusted bin width.
+
+#b) 1 distribution plot with 2 variables making use of bivariate density contours with amount of curves and its lowest level adjusted (use a kernel density estimation displot()).
+
+#c) 1 “heatmap” plot representing 3 variables, again of kind kde.
 
 
 
