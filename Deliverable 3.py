@@ -214,6 +214,9 @@ sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kin
 sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='box')
 #Box plot showing the distribution of Blood Pressure for each sleep disorder category split by Gender.
 
+#e)box plot showing the shape of the distribution (boxenplot)
+sns.catplot(data=data, x='BMI Category', y='Blood Pressure', kind='boxen')
+#Boxen plot showing how Blood Pressure distribution shape changes across BMI categories.
 
 
 #h) 1 bar plot representing 3 variables showing 97% confidence intervals
