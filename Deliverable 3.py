@@ -139,23 +139,31 @@ sns.lmplot(data, x="Daily Steps", y="Heart Rate")
 #A scatter plot with a linear regression line was generated between Stress levels vs. Daily Steps. 
 
 #6.2.Visualizing categorical data 
+#Categorical data: Gender, Occupation, BMI Category, Blood Pressure and Sleep Disorder
+
+
+
 
 
 
 #h) 1 bar plot representing 3 variables showing 97% confidence intervals
+sns.catplot(data, x='BMI Category' , y='Blood Pressure' , hue='Gender', kind='bar', errorbar=('pi', 97))
 
 #i) 1 point plot representing 3 variables showing 90% confidence intervals and lines in dashed style
+sns.catplot(data, x='Sleep Disorder' , y='Blood Pressure' , hue='Gender', kind='point', errorbar=('pi', 90), linestyles=['-','--'])
 
 #j) 1 bar plot showing the number of observations in each category
-
+sns.catplot(data, x= 'Sleep Disorder', hue='Gender', kind='count') #Counts the number of each sleep disorder; Insomnia and Sleep Apnea and made it more visible to see the difference in males and females. Males have
 
 #6.3. Visualizing bivariate distributions
 #a) 1 “heatmap” plot representing 2 variables with color intensity bar and adjusted bin width.
+sns.displot(data, x='Age', y='Sleep Duration', binwidth=(1,3), cbar=True)
 
 #b) 1 distribution plot with 2 variables making use of bivariate density contours with amount of curves and its lowest level adjusted (use a kernel density estimation displot()).
+sns.displot(data, x='Age', y='Sleep Duration', kind='kde')
 
 #c) 1 “heatmap” plot representing 3 variables, again of kind kde.
-
+sns.displot(data, x='Age', y='Quality of Sleep', hue='Occupation', kind='kde')
 
 
 
