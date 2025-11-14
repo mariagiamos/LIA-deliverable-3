@@ -44,6 +44,10 @@ print(data.fillna("None"))
 #Sleep Duration are floating numbers
 #Occupation, Gender, BMI, Blood pressure and Sleep Disorders are all strings. 
 
+#First, we remove the Person ID column. This column is just an identifier and does not represent any real measurement or category.
+#Keeping it would distort our results and is unnecessary for analysis.
+data = data.drop(columns=["Person ID"])
+
 
 #4. Univariate graphical EDA-------------------------------------------------------
 variables= ['Age', 'Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps' ]  #numerical variables 
