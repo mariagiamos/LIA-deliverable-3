@@ -44,6 +44,10 @@ print(data.fillna("None"))
 #Sleep Duration are floating numbers
 #Occupation, Gender, BMI, Blood pressure and Sleep Disorders are all strings. 
 
+#3. Univariate Non-Graphical EDA
+#In this step, we analyze each variable separately to better understand the distribution of values.
+#We will split our dataset into numerical variables and categorical variables because they are summarized differently.
+
 #First, we remove the Person ID column. This column is just an identifier and does not represent any real measurement or category.
 #Keeping it would distort our results and is unnecessary for analysis.
 data = data.drop(columns=["Person ID"])
