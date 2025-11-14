@@ -198,6 +198,9 @@ sns.lmplot(data, x="Daily Steps", y="Heart Rate")
 
 #6.2.Visualizing categorical data 
 #Categorical data: Gender, Occupation, BMI Category, Blood Pressure and Sleep Disorder
+#a)categorical scatter plot with jitter enabled
+sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', kind='strip', jitter=True)
+#Jitter is enabled so the points spread out and overlapping values are easier to see.
 
 
 
