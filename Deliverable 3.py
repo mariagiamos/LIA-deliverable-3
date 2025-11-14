@@ -120,11 +120,6 @@ sns.boxplot(y=data['Heart Rate'])
 #Stress Levels: 3 and 8 ( slighty higger) which shows how stress is lived in both extremes; not at all and a lot, with little in the middle around 6. 
 
 
-
-
-
-
-
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
 sns.relplot(data, x="Sleep Duration", y="Stress Level", col="Gender", kind="scatter")
