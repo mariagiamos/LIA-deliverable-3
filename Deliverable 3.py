@@ -52,6 +52,10 @@ print(data.fillna("None"))
 #Keeping it would distort our results and is unnecessary for analysis.
 data = data.drop(columns=["Person ID"])
 
+#seperate numerical and categorical variables
+num = data.select_dtypes(include="number") #only keeps numerical clumns
+cat = data.select_dtypes(exclude="number") #only keeps non-numerical columns
+
 
 #4. Univariate graphical EDA-------------------------------------------------------
 variables= ['Age', 'Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps' ]  #numerical variables 
