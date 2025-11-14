@@ -202,6 +202,9 @@ sns.lmplot(data, x="Daily Steps", y="Heart Rate")
 sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', kind='strip', jitter=True)
 #Jitter is enabled so the points spread out and overlapping values are easier to see.
 
+#b)categorical scatter plot with jitter disabled (explain your choice of variable for this one)
+sns.catplot(data=data, x='Gender', y='Blood Pressure', kind='strip', jitter=False)
+#Jitter is off because Gender only has two categories, so points stay aligned and easier to compare.
 
 
 
