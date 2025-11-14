@@ -165,6 +165,12 @@ print ("Crosstab between BMI and Sleep Disorder")
 tab2=pd.crosstab(data["BMI Category"], data["Sleep Disorder"], normalize='index')
 print(tab2)
 
+#c) Relationship between Occupation and Sleep Disorder
+print("Crosstab between Occupation and Sleep Disorder")
+#this one shows which occupatopms have higher proportions of sleep disorders
+tab3 = pd.crosstab(data["Occupation"], data["Sleep Disorder"], normalize='index') #its index to give a proportion
+print(tab3)
+
 
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
