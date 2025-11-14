@@ -218,6 +218,10 @@ sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kin
 sns.catplot(data=data, x='BMI Category', y='Blood Pressure', kind='boxen')
 #Boxen plot showing how Blood Pressure distribution shape changes across BMI categories.
 
+#f)split violin plot representing 3 variables with bandwidth adjusted
+sns.catplot(data=data, x='BMI Category', y='Sleep Duration', hue='Gender', kind='violin', split=True, bw_adjust=0.7)
+#Split violin comparing Male and Female Sleep Duration for each BMI Category with adjusted bandwidth.
+
 
 #h) 1 bar plot representing 3 variables showing 97% confidence intervals
 sns.catplot(data, x='BMI Category' , y='Blood Pressure' , hue='Gender', kind='bar', errorbar=('pi', 97))
