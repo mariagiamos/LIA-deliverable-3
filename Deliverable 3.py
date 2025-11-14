@@ -206,6 +206,9 @@ sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', kind='strip', jit
 sns.catplot(data=data, x='Gender', y='Blood Pressure', kind='strip', jitter=False)
 #Jitter is off because Gender only has two categories, so points stay aligned and easier to compare.
 
+#c)“beeswarm” plot representing 3 variables
+sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='swarm')
+#A beeswarm (swarm) plot showing Blood Pressure distributions across sleep disorder types by Gender.
 
 
 
