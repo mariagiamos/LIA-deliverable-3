@@ -159,6 +159,12 @@ print("Crosstab between Gender and Sleep Disorder")
 tab1 = pd.crosstab(data["Gender"], data["Sleep Disorder"], normalize='index')
 print(tab1)
 
+#b) Rekationship between BMI and sleep disorder
+print ("Crosstab between BMI and Sleep Disorder")
+#this tabke shows how many individuals of each gender have or do not have sleep disorders
+tab2=pd.crosstab(data["BMI Category"], data["Sleep Disorder"], normalize='index')
+print(tab2)
+
 
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
