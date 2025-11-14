@@ -171,6 +171,12 @@ print("Crosstab between Occupation and Sleep Disorder")
 tab3 = pd.crosstab(data["Occupation"], data["Sleep Disorder"], normalize='index') #its index to give a proportion
 print(tab3)
 
+#d)Relationship between Quality of Sleep and Stress Level
+print("Crosstab between Quality of Sleep and Stress Level")
+#this table shows how stress levels vary across different sleep quality categories
+tab4 = pd.crosstab(data["Quality of Sleep"], data["Stress Level"], normalize='index')
+print(tab4)
+
 
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
