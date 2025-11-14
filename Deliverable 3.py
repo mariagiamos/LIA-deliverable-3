@@ -222,6 +222,9 @@ sns.catplot(data=data, x='BMI Category', y='Blood Pressure', kind='boxen')
 sns.catplot(data=data, x='BMI Category', y='Sleep Duration', hue='Gender', kind='violin', split=True, bw_adjust=0.7)
 #Split violin comparing Male and Female Sleep Duration for each BMI Category with adjusted bandwidth.
 
+#g)violin plot with scatter points inside the violin shapes
+sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='violin', inner='point')
+#Violin plot showing the distribution of Blood Pressure with summary points inside each violin.
 
 #h) 1 bar plot representing 3 variables showing 97% confidence intervals
 sns.catplot(data, x='BMI Category' , y='Blood Pressure' , hue='Gender', kind='bar', errorbar=('pi', 97))
