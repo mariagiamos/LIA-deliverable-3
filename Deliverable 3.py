@@ -177,6 +177,11 @@ print("Crosstab between Quality of Sleep and Stress Level")
 tab4 = pd.crosstab(data["Quality of Sleep"], data["Stress Level"], normalize='index')
 print(tab4)
 
+#e)Three-way table: Gender + Occupation vs Sleep Disorder
+print("Three-way Crosstab - Gender and Occupation vs Sleep Disorder")
+#this table shows the proportions of sleep disorders within each (Gender, Occupation) combination
+tab5 = pd.crosstab([data["Gender"], data["Occupation"]], data["Sleep Disorder"], normalize='index')
+print(tab5)
 
 #6. Multivariate graphical EDA-----------------------------------------------------------
 #6.1 Visualizing statistical relationships
