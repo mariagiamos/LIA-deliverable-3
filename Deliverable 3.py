@@ -56,6 +56,18 @@ data = data.drop(columns=["Person ID"])
 num = data.select_dtypes(include="number") #only keeps numerical clumns
 cat = data.select_dtypes(exclude="number") #only keeps non-numerical columns
 
+#a) Numerical Values
+print("Numerical Values")
+for column in num.columns:
+    print("Variable:", column)
+    print("Mean:", num[column].mean()) #average value
+    print("Median:", num[column].median()) #midle value
+    print("Mode:", num[column].mode()[0]) #most frequent values, and mode (0) so that it takes the first mode
+    print("Standard Deviation:", num[column].std())
+    print("Variance:", num[column].var()) #square of the std
+    print("Quartiles (Q1, Q2, Q3):")
+    print(num[column].quantile([0.25, 0.50, 0.75]))
+    
 
 #4. Univariate graphical EDA-------------------------------------------------------
 variables= ['Age', 'Sleep Duration', 'Quality of Sleep', 'Physical Activity Level', 'Stress Level', 'Heart Rate', 'Daily Steps' ]  #numerical variables 
