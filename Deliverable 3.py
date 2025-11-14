@@ -199,31 +199,31 @@ sns.lmplot(data, x="Daily Steps", y="Heart Rate")
 #6.2.Visualizing categorical data 
 #Categorical data: Gender, Occupation, BMI Category, Blood Pressure and Sleep Disorder
 #a)categorical scatter plot with jitter enabled
-sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', kind='strip', jitter=True)
+sns.catplot(data, x='Sleep Disorder', y='Blood Pressure', kind='strip', jitter=True)
 #Jitter is enabled so the points spread out and overlapping values are easier to see.
 
 #b)categorical scatter plot with jitter disabled (explain your choice of variable for this one)
-sns.catplot(data=data, x='Gender', y='Blood Pressure', kind='strip', jitter=False)
+sns.catplot(data, x='Gender', y='Blood Pressure', kind='strip', jitter=False)
 #Jitter is off because Gender only has two categories, so points stay aligned and easier to compare.
 
 #c)“beeswarm” plot representing 3 variables
-sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='swarm')
+sns.catplot(data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='swarm')
 #A beeswarm (swarm) plot showing Blood Pressure distributions across sleep disorder types by Gender.
 
 #d)box plot representing 3 variables
-sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='box')
+sns.catplot(data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='box')
 #Box plot showing the distribution of Blood Pressure for each sleep disorder category split by Gender.
 
 #e)box plot showing the shape of the distribution (boxenplot)
-sns.catplot(data=data, x='BMI Category', y='Blood Pressure', kind='boxen')
+sns.catplot(data, x='BMI Category', y='Blood Pressure', kind='boxen')
 #Boxen plot showing how Blood Pressure distribution shape changes across BMI categories.
 
 #f)split violin plot representing 3 variables with bandwidth adjusted
-sns.catplot(data=data, x='BMI Category', y='Sleep Duration', hue='Gender', kind='violin', split=True, bw_adjust=0.7)
+sns.catplot(data, x='BMI Category', y='Sleep Duration', hue='Gender', kind='violin', split=True, bw_adjust=0.7)
 #Split violin comparing Male and Female Sleep Duration for each BMI Category with adjusted bandwidth.
 
 #g)violin plot with scatter points inside the violin shapes
-sns.catplot(data=data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='violin', inner='point')
+sns.catplot(data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='violin', inner='point')
 #Violin plot showing the distribution of Blood Pressure with summary points inside each violin.
 
 #h) 1 bar plot representing 3 variables showing 97% confidence intervals
