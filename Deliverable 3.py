@@ -197,6 +197,14 @@ sns.lmplot(data, x="Daily Steps", y="Heart Rate")
 #A scatter plot with a linear regression line was generated between Stress levels vs. Daily Steps. 
 
 #6.2.Visualizing categorical data 
+# --- Fix Blood Pressure Ordering for ALL Graphs ---
+
+# Extract systolic value for proper numeric sorting
+data["BP_Systolic"] = data["Blood Pressure"].apply(lambda x: int(x.split("/")[0]))
+
+# Sort LOW → HIGH correctly
+data = data.sort_values(by="BP_Systolic", ascending=False)
+
 #Categorical data: Gender, Occupation, BMI Category, Blood Pressure and Sleep Disorder
 #a)categorical scatter plot with jitter enabled
 sns.catplot(data, x='Sleep Disorder', y='Blood Pressure', kind='strip', jitter=True)
@@ -217,6 +225,7 @@ sns.catplot(data, x='Sleep Disorder', y='Blood Pressure', hue='Gender', kind='bo
 #e)box plot showing the shape of the distribution (boxenplot)
 sns.catplot(data, x='BMI Category', y='Blood Pressure', kind='boxen')
 #Boxen plot showing how Blood Pressure distribution shape changes across BMI categories.
+
 
 #f)split violin plot representing 3 variables with bandwidth adjusted
 sns.catplot(data, x='BMI Category', y='Sleep Duration', hue='Gender', kind='violin', split=True, bw_adjust=0.7)
